@@ -76,6 +76,22 @@
     <Compile Include="BEPCSAP.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="bin\Debug\Entidades.vshost.exe" />
+    <Content Include="bin\Debug\iSBO_BE.dll" />
+    <Content Include="bin\Debug\iSBO_BE.pdb" />
+    <Content Include="bin\Release\iSBO_BE.dll" />
+    <Content Include="bin\Release\iSBO_BE.pdb" />
+    <Content Include="bin\x64\Debug\iSBO_BE.dll" />
+    <Content Include="bin\x64\Debug\iSBO_BE.pdb" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="bin\Debug\Entidades.vshost.exe.manifest" />
+    <None Include="bin\x64\Debug\iSBO_BE.b1s" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="bin\x64\Release\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
