@@ -129,35 +129,7 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\iSBO_BE.dll" />
-    <Content Include="bin\Debug\iSBO_BE.pdb" />
-    <Content Include="bin\Debug\iSBO_DA.dll" />
-    <Content Include="bin\Debug\iSBO_DA.pdb" />
-    <Content Include="bin\Debug\iSBO_DA.vshost.exe" />
-    <Content Include="bin\Debug\iSBO_Util.dll" />
-    <Content Include="bin\Debug\iSBO_Util.pdb" />
-    <Content Include="bin\Release\iSBO_BE.dll" />
-    <Content Include="bin\Release\iSBO_BE.pdb" />
-    <Content Include="bin\Release\iSBO_DA.dll" />
-    <Content Include="bin\Release\iSBO_DA.pdb" />
-    <Content Include="bin\Release\iSBO_Util.dll" />
-    <Content Include="bin\Release\iSBO_Util.pdb" />
-    <Content Include="bin\x64\Debug\iSBO_BE.dll" />
-    <Content Include="bin\x64\Debug\iSBO_BE.pdb" />
-    <Content Include="bin\x64\Debug\iSBO_DA.dll" />
-    <Content Include="bin\x64\Debug\iSBO_DA.pdb" />
-    <Content Include="bin\x64\Debug\iSBO_Util.dll" />
-    <Content Include="bin\x64\Debug\iSBO_Util.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\Debug\iSBO_DA.vshost.exe.manifest" />
-    <None Include="bin\Release\iSBO_DA.tlb" />
-    <None Include="bin\x64\Debug\iSBO_DA.b1s" />
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="bin\x64\Release\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

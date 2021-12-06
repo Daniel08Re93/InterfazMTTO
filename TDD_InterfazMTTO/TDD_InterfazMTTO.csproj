@@ -101,45 +101,7 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="bin\x64\Release\" />
     <Folder Include="Referencias de prueba\" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="bin\Debug\InterfazMTTO.dll" />
-    <Content Include="bin\Debug\InterfazMTTO.pdb" />
-    <Content Include="bin\Debug\iSBO_BE.dll" />
-    <Content Include="bin\Debug\iSBO_BE.pdb" />
-    <Content Include="bin\Debug\iSBO_DA.dll" />
-    <Content Include="bin\Debug\iSBO_DA.pdb" />
-    <Content Include="bin\Debug\iSBO_Util.dll" />
-    <Content Include="bin\Debug\iSBO_Util.pdb" />
-    <Content Include="bin\Debug\TDD_InterfazMTTO.dll" />
-    <Content Include="bin\Debug\TDD_InterfazMTTO.pdb" />
-    <Content Include="bin\Release\InterfazMTTO.dll" />
-    <Content Include="bin\Release\InterfazMTTO.pdb" />
-    <Content Include="bin\Release\iSBO_BE.dll" />
-    <Content Include="bin\Release\iSBO_BE.pdb" />
-    <Content Include="bin\Release\iSBO_DA.dll" />
-    <Content Include="bin\Release\iSBO_DA.pdb" />
-    <Content Include="bin\Release\iSBO_Util.dll" />
-    <Content Include="bin\Release\iSBO_Util.pdb" />
-    <Content Include="bin\Release\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
-    <Content Include="bin\Release\TDD_InterfazMTTO.dll" />
-    <Content Include="bin\Release\TDD_InterfazMTTO.pdb" />
-    <Content Include="bin\x64\Debug\InterfazMTTO.dll" />
-    <Content Include="bin\x64\Debug\InterfazMTTO.pdb" />
-    <Content Include="bin\x64\Debug\iSBO_BE.dll" />
-    <Content Include="bin\x64\Debug\iSBO_BE.pdb" />
-    <Content Include="bin\x64\Debug\iSBO_DA.dll" />
-    <Content Include="bin\x64\Debug\iSBO_DA.pdb" />
-    <Content Include="bin\x64\Debug\iSBO_Util.dll" />
-    <Content Include="bin\x64\Debug\iSBO_Util.pdb" />
-    <Content Include="bin\x64\Debug\Microsoft.VisualStudio.QualityTools.UnitTestFramework.dll" />
-    <Content Include="bin\x64\Debug\TDD_InterfazMTTO.dll" />
-    <Content Include="bin\x64\Debug\TDD_InterfazMTTO.pdb" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="bin\x64\Debug\TDD_InterfazMTTO.b1s" />
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
