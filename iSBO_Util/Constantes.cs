@@ -195,9 +195,14 @@ namespace InterfazMTTO.iSBO_Util
 
         public static readonly string P_TEXTO_ERROR_INTERNO = "Se produjo un error interno en la aplicación";
         public static readonly string P_TEXTO_ERROR_SOCIEDAD = "La sociedad no esta conectada";
-       
+
+
+        /* Campos de Proyecto */
+        public static readonly string P_CODIGOPROYECTO = "CodigoProyecto";
+        public static readonly string P_DESCRIPCIONPROYECTO = "DescripcionProyecto";
+        public static readonly string P_ESTADOPROYECTO = "EstadoProyecto";
     }
 
-    
+
 
 }
