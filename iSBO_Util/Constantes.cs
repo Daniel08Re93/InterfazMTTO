@@ -131,6 +131,7 @@ namespace InterfazMTTO.iSBO_Util
         public static readonly string P_BLOQUEADO = "Bloqueado";
         public static readonly string P_CANTIDADDISPONIBLE = "CantidadDisponible";
         public static readonly string P_TIPOARTICULO = "TipoArticulo";
+        public static readonly string P_COSTOARTICULO = "CostoArticulo";
 
         /* Campos de Unidad de Control */
 

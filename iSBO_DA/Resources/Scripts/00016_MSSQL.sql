@@ -1,0 +1,1 @@
+﻿EXEC VS_SP_ObtenerCostoArticuloSAP '${param1}'
