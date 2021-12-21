@@ -29,15 +29,16 @@ namespace InterfazMTTO.iSBO_DA
                     DocSolicitud.Comments = OWTQ.Comentarios;                    
 
                     SAPbobsCOM.IStockTransfer_Lines DocSolicitud_Lineas = DocSolicitud.Lines;
-
                     int i = 0;
+
                     foreach (BEWTQ1 DetSolicitud in WTQ1List)
                     {
                         DocSolicitud_Lineas.SetCurrentLine(i);
 
                         DocSolicitud_Lineas.ItemCode = DetSolicitud.CodigoArticulo;
-                        DocSolicitud_Lineas.Quantity = DetSolicitud.CantidadSolicitada;
+
                         DocSolicitud_Lineas.UserFields.Fields.Item(iSBO_Util.Constantes.C_NROLINEAORDENTRABAJO).Value = DetSolicitud.NroLinea.ToString();
+                        DocSolicitud_Lineas.Quantity = DetSolicitud.CantidadSolicitada;
                         DocSolicitud_Lineas.UserFields.Fields.Item(iSBO_Util.Constantes.C_TIPOOPERACION).Value = DetSolicitud.TipoOperacion;
                         DocSolicitud_Lineas.FromWarehouseCode = OWTQ.AlmacenSalida;
                         DocSolicitud_Lineas.WarehouseCode = OWTQ.AlmacenEntrada;
