@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using InterfazMTTO.iSBO_BE;
-using InterfazMTTO.iSBO_Util;
 
 namespace InterfazMTTO.iSBO_DA
 {
@@ -38,17 +34,20 @@ namespace InterfazMTTO.iSBO_DA
                     foreach (BEWTQ1 DetSolicitud in WTQ1List)
                     {
                         DocSolicitud_Lineas.SetCurrentLine(i);
-                        DocSolicitud_Lineas.UserFields.Fields.Item(iSBO_Util.Constantes.C_NROLINEAORDENTRABAJO).Value = DetSolicitud.NroLinea;
+
                         DocSolicitud_Lineas.ItemCode = DetSolicitud.CodigoArticulo;
                         DocSolicitud_Lineas.Quantity = DetSolicitud.CantidadSolicitada;
+                        DocSolicitud_Lineas.UserFields.Fields.Item(iSBO_Util.Constantes.C_NROLINEAORDENTRABAJO).Value = DetSolicitud.NroLinea.ToString();
                         DocSolicitud_Lineas.UserFields.Fields.Item(iSBO_Util.Constantes.C_TIPOOPERACION).Value = DetSolicitud.TipoOperacion;
                         DocSolicitud_Lineas.FromWarehouseCode = OWTQ.AlmacenSalida;
                         DocSolicitud_Lineas.WarehouseCode = OWTQ.AlmacenEntrada;
-                        DocSolicitud_Lineas.DistributionRule = DetSolicitud.CCosto1;
-                        DocSolicitud_Lineas.DistributionRule2 = DetSolicitud.CCosto2;
-                        DocSolicitud_Lineas.DistributionRule3 = DetSolicitud.CCosto3;
-                        DocSolicitud_Lineas.DistributionRule4  = DetSolicitud.CCosto4;
-                        DocSolicitud_Lineas.DistributionRule5 = DetSolicitud.CCosto5;
+
+                        if (DetSolicitud.CCosto1 != null && DetSolicitud.CCosto1 != "") DocSolicitud_Lineas.DistributionRule = DetSolicitud.CCosto1;
+                        if (DetSolicitud.CCosto2 != null && DetSolicitud.CCosto2 != "") DocSolicitud_Lineas.DistributionRule2 = DetSolicitud.CCosto2;
+                        if (DetSolicitud.CCosto3 != null && DetSolicitud.CCosto3 != "") DocSolicitud_Lineas.DistributionRule3 = DetSolicitud.CCosto3;
+                        if (DetSolicitud.CCosto4 != null && DetSolicitud.CCosto4 != "") DocSolicitud_Lineas.DistributionRule4 = DetSolicitud.CCosto4;
+                        if (DetSolicitud.CCosto5 != null && DetSolicitud.CCosto5 != "") DocSolicitud_Lineas.DistributionRule5 = DetSolicitud.CCosto5;
+
                         DocSolicitud_Lineas.Add();
                         i++;
                     }
