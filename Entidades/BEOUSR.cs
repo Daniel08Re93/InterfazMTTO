@@ -13,6 +13,7 @@ namespace InterfazMTTO.iSBO_BE
         private String _Nombres;
         private String _Apellidos;
         private String _Correo;
+        private String _Department;
 
 
         public String Nombres
@@ -58,6 +59,11 @@ namespace InterfazMTTO.iSBO_BE
             set { _DescripcionUsuario = value; }
         }
 
+        public String Department
+        {
+            get { return _Department; }
+            set { _Department = value; }
+        }
     }
 
     public class BEOUSRList : List<BEOUSR>, ICloneable

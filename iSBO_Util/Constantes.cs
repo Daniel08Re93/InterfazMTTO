@@ -124,6 +124,7 @@ namespace InterfazMTTO.iSBO_Util
         public static readonly string P_NOMBRESUSUARIO = "Nombres";
         public static readonly string P_APELLIDOSUSUARIO = "Apellidos";
         public static readonly string P_CORREOUSUARIO = "Correo";
+        public static readonly string P_DEPARTMENTUSUARIO = "Department";
 
         /* Campos de Articulos */
         public static readonly string P_CODIGOARTICULO = "CodigoArticulo";

@@ -184,6 +184,83 @@ namespace InterfazMTTO.iSBO_DA
             return ListadoUsuarios;
         }
 
+        public static BEOUSRList ListarUsuariosDepartment(int CodeDepartment, ref BERPTA Respuesta)
+        {
+            BEOUSRList ListadoUsuarios = new BEOUSRList();
+            string Query = string.Empty;
+            SAPbobsCOM.IRecordset Result = null;
+            Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_INICIO_RESULT;
+
+            try
+            {
+                if (Conexion.Sociedad.Connected == true)
+                {
+
+                    BERPTA EstadoConsulta = new BERPTA();
+
+                    Result = Conexion.RecordSet_SAP(17, new string[] { CodeDepartment.ToString()}, ref EstadoConsulta);
+
+                    Respuesta.ResultadoRetorno = EstadoConsulta.ResultadoRetorno;
+
+                    if (EstadoConsulta.ResultadoRetorno == iSBO_Util.Constantes.P_VALOR_RESULT_0)
+                    {
+
+                        while (!Result.EoF)
+                        {
+                            BEOUSR Usuarios = new BEOUSR();
+
+                            if (Convert.ToInt16(Result.Fields.Item(iSBO_Util.Constantes.P_RESULTADORETORNO).Value.ToString()) == iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_1)
+                            {
+                                Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_3;
+                                break;
+                            }
+
+                            Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_0;
+                            Usuarios.CodigoUsuario = Result.Fields.Item(iSBO_Util.Constantes.P_CODIGOUSUARIO).Value.ToString();
+                            Usuarios.DescripcionUsuario = Result.Fields.Item(iSBO_Util.Constantes.P_DESCRIPCIONUSUARIO).Value.ToString();
+                            Usuarios.Nombres = Result.Fields.Item(iSBO_Util.Constantes.P_NOMBRESUSUARIO).Value.ToString();
+                            Usuarios.Apellidos = Result.Fields.Item(iSBO_Util.Constantes.P_APELLIDOSUSUARIO).Value.ToString();
+                            Usuarios.Correo = Result.Fields.Item(iSBO_Util.Constantes.P_CORREOUSUARIO).Value.ToString();
+                            Usuarios.Department = Result.Fields.Item(iSBO_Util.Constantes.P_DEPARTMENTUSUARIO).Value.ToString();
+                            ListadoUsuarios.Add(Usuarios);
+                            Result.MoveNext();
+                            Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_0;
+                        }
+
+
+                    }
+                }
+                else
+                {
+                    Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_2;
+                    Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
+                    Respuesta.DescripcionErrorUsuario = Respuesta.DescripcionErrorUsuario + iSBO_Util.Constantes.P_TEXTO_ERROR_SOCIEDAD;
+                }
+
+            }
+
+            catch (Exception ex)
+            {
+                iSBO_Util.ErrorHandler Error = new iSBO_Util.ErrorHandler();
+                Error.EscribirError(ex.Data.ToString(), ex.Message, ex.Source, ex.StackTrace, ex.TargetSite.ToString(), "", "", "");
+                Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_9;
+                Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
+            }
+
+            finally
+            {
+                if (Result != null)
+                {
+                    System.Runtime.InteropServices.Marshal.ReleaseComObject(Result);
+                }
+
+                Result = null;
+                GC.Collect();
+            }
+
+            return ListadoUsuarios;
+        }
+
         public static BEOUSR ValidaUsuario(BEOUSR OUSR, BEPCSAP ParametrosConexion,  ref BERPTA Respuesta)
         {            
             BEOUSR Usuario = new BEOUSR();            
