@@ -63,6 +63,7 @@
     <Compile Include="Empleado_DA.cs" />
     <Compile Include="OrdenCompra_DA.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proyecto_DA.cs" />
     <Compile Include="SalidaMercancia_DA.cs" />
     <Compile Include="SocioNegocio_DA.cs" />
     <Compile Include="SolicitudTransferencia_DA.cs" />
@@ -129,7 +130,22 @@
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </COMReference>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Scripts\00015_MSSQL.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Scripts\00015_HANA.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Scripts\00017_HANA.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Resources\Scripts\00017_MSSQL.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\Scripts\00016_HANA.sql" />
+    <Content Include="Resources\Scripts\00016_MSSQL.sql" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
