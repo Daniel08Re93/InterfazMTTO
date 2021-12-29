@@ -62,27 +62,25 @@
     <Compile Include="Empleado_BL.cs" />
     <Compile Include="OrdenCompra_BL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Proyecto_BL.cs" />
     <Compile Include="SalidaMercancia_BL.cs" />
     <Compile Include="SocioNegocio_BL.cs" />
     <Compile Include="SolicitudTransferencia_BL.cs" />
+    <Compile Include="TipoCambio_BL.cs" />
     <Compile Include="UnidadControl_BL.cs" />
     <Compile Include="Usuario_BL.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="iSBO_BE">
+      <HintPath>..\Entidades\bin\x64\Debug\iSBO_BE.dll</HintPath>
+    </Reference>
     <Reference Include="iSBO_DA">
-      <HintPath>..\iSBO_DA\obj\x86\Release\iSBO_DA.dll</HintPath>
+      <HintPath>..\iSBO_DA\bin\x64\Debug\iSBO_DA.dll</HintPath>
+    </Reference>
+    <Reference Include="iSBO_Util">
+      <HintPath>..\iSBO_Util\bin\x64\Debug\iSBO_Util.dll</HintPath>
     </Reference>
     <Reference Include="System" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\Entidades\iSBO_BE.csproj">
-      <Project>{DC4F8AC8-BF5C-4791-BA80-1C8344D627C2}</Project>
-      <Name>iSBO_BE</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\iSBO_Util\iSBO_Util.csproj">
-      <Project>{68D9DCFC-4A6B-46EE-855A-74841FB00578}</Project>
-      <Name>iSBO_Util</Name>
-    </ProjectReference>
   </ItemGroup>
   <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

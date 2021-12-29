@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using SAPbobsCOM;
 using InterfazMTTO.iSBO_BE;
 using iSBO_DA;
@@ -166,5 +163,27 @@ namespace InterfazMTTO.iSBO_DA
             return RS_SAP;
         }
 
+
+        public static SAPbobsCOM.IRecordset EjecutarRecordSet(string Query, ref BERPTA EstadoConsulta)
+        {
+
+            SAPbobsCOM.IRecordset RS_SAP = null;
+            try
+            {
+                RS_SAP = (SAPbobsCOM.IRecordset)Conexion.Sociedad.GetBusinessObject(BoObjectTypes.BoRecordset);
+                RS_SAP.DoQuery(Query);
+
+            }
+            catch (Exception ex)
+            {
+                EstadoConsulta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_9;
+                EstadoConsulta.DescripcionErrorUsuario = iSBO_Util.Constantes.P_TEXTO_ERROR_INTERNO;
+                EstadoConsulta = iSBO_Util.DiccionarioErrores.ObtenerError(EstadoConsulta.ResultadoRetorno);
+                iSBO_Util.ErrorHandler Error = new iSBO_Util.ErrorHandler();
+                Error.EscribirError(ex.Data.ToString(), ex.Message, ex.Source, ex.StackTrace, ex.TargetSite.ToString(), "", "", "");
+            }
+
+            return RS_SAP;
+        }
     }
 }

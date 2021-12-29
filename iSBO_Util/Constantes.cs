@@ -1,13 +1,4 @@
-﻿using System;
-using System.Xml;
-using System.Xml.Schema; 
-using System.Collections.Generic;
-using System.Text;
-
-using InterfazMTTO.iSBO_BE;
-using System.Reflection;
-
-namespace InterfazMTTO.iSBO_Util
+﻿namespace InterfazMTTO.iSBO_Util
 {
     public class Constantes
     {
@@ -95,8 +86,9 @@ namespace InterfazMTTO.iSBO_Util
         public static readonly int P_VALOR_RESULT_929 = 929;
         public static readonly int P_VALOR_RESULT_930 = 930;
         public static readonly int P_VALOR_RESULT_931 = 931;
-        public static readonly int P_VALOR_RESULT_932 = 932;        
+        public static readonly int P_VALOR_RESULT_932 = 932;
         public static readonly int P_VALOR_RESULT_992 = 992;
+        public static readonly int P_VALOR_RESULT_933 = 933;
         #region CAMBIO_REQ_NRO2
         public static readonly int P_VALOR_RESULT_993 = 993;
         #endregion

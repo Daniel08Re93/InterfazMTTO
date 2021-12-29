@@ -1,31 +1,25 @@
-﻿using System;
-using InterfazMTTO.iSBO_BE;
+﻿using InterfazMTTO.iSBO_BE;
+using System;
 
-namespace InterfazMTTO
+namespace InterfazMTTO.iSBO_BL
 {
-    public class CentroCosto_BL
+    public class TipoCambio_BL
     {
-        public static BEOPRCList ListarCCs(int TipoCC,ref BERPTA Respuesta, string padre = null)
-        {
-            BEOPRCList ListadoCC = new BEOPRCList();
-            BEOPRCList TipoCCs = new BEOPRCList();
 
+        public static BEORTT ObtenerTipoCambioPorFecha(DateTime fecha, ref BERPTA Respuesta)
+        {
+            BEORTT tipocambio = null;
             Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_INICIO_RESULT;
 
             try
             {
-                if (TipoCC <=0)
-                {
-                    Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_902;
-                }
-                else
-                {
-                 
-                    ListadoCC = iSBO_DA.CentroCosto_DA.ListarCCs(TipoCC, ref Respuesta, padre);
-                }
-            
-            }
+                tipocambio = iSBO_DA.TipoCambio_DA.ObtenerTipoCambioPorFecha(fecha, ref Respuesta);
 
+                if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
+                {
+                    throw new Exception();
+                }
+            }
             catch (Exception ex)
             {
                 iSBO_Util.ErrorHandler Error = new iSBO_Util.ErrorHandler();
@@ -33,7 +27,6 @@ namespace InterfazMTTO
                 if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
                 {
                     Error.EscribirError("ControlERROR", Respuesta.CodigoErrorUsuario + '-' + Respuesta.DescripcionErrorUsuario, ex.Source, ex.StackTrace, ex.TargetSite.ToString(), "", "", "");
-
                 }
                 else
                 {
@@ -42,7 +35,6 @@ namespace InterfazMTTO
                     Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
                 }
             }
-
             finally
             {
                 if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_2)
@@ -50,8 +42,7 @@ namespace InterfazMTTO
                     Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
                 }
             }
-
-            return ListadoCC;
+            return tipocambio;
         }
     }
 }
