@@ -1,17 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using InterfazMTTO.iSBO_BE;
-using InterfazMTTO.iSBO_DA;
-
-
 namespace InterfazMTTO.iSBO_BL
-{
-      
+{     
     public class Articulo_BL
     {
-
         public static BEOITMList ListarArticulos(string TipoArticulo, ref BERPTA Respuesta)
         {
             BEOITMList ListadoArticulos = new BEOITMList();
@@ -262,7 +254,7 @@ namespace InterfazMTTO.iSBO_BL
                 if (Respuesta.ResultadoRetorno == iSBO_Util.Constantes.P_VALOR_INICIO_RESULT)
                 {
                     ListadoCosto = iSBO_DA.Articulo_DA.ObtenerCostoArticulo(IdArticulo, ref Respuesta);
-
+                    
                     if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
                     {
                         throw new Exception();
