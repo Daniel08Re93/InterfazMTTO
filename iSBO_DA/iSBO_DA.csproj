@@ -67,6 +67,7 @@
     <Compile Include="SalidaMercancia_DA.cs" />
     <Compile Include="SocioNegocio_DA.cs" />
     <Compile Include="SolicitudTransferencia_DA.cs" />
+    <Compile Include="TipoCambio_DA.cs" />
     <Compile Include="UnidadControl_DA.cs" />
     <Compile Include="Usuario_DA.cs" />
     <Compile Include="VSSQLFactory.cs" />

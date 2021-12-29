@@ -68,6 +68,7 @@
     <Compile Include="BEOITW.cs" />
     <Compile Include="BEOPOR.cs" />
     <Compile Include="BEOPRJ.cs" />
+    <Compile Include="BEORTT.cs" />
     <Compile Include="BEOUSR.cs" />
     <Compile Include="BEOPRC.cs" />
     <Compile Include="BEOWTQ.cs" />

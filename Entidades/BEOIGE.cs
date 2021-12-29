@@ -1,7 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Text;
-
 namespace InterfazMTTO.iSBO_BE
 {
     public class BEOIGE

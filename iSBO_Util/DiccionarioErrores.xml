@@ -185,5 +185,10 @@
     <CodigoErrorUsuario>993</CodigoErrorUsuario>
     <DescripcionErrorUsuario>El componente no se encuentra asignado al almacén solicitado.</DescripcionErrorUsuario>
   </Error>
+	<Error>
+		<ResultadoRetorno>933</ResultadoRetorno>
+		<CodigoErrorUsuario>933</CodigoErrorUsuario>
+		<DescripcionErrorUsuario>Ingrese el tipo de cambio de hoy en Sap</DescripcionErrorUsuario>
+	</Error>
 </Errores>
 

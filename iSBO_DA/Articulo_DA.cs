@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using InterfazMTTO.iSBO_BE;
-using InterfazMTTO.iSBO_Util;
 
 namespace InterfazMTTO.iSBO_DA
 {
@@ -26,8 +22,6 @@ namespace InterfazMTTO.iSBO_DA
                     //Query = "EXEC " + iSBO_Util.Constantes.SP_LISTA_ARTICULOS_SAP + " '" + TipoArticulo.ToString() + "'," + iSBO_Util.Constantes.P_VALOR_RESULT_0 + ",''";
 
                     Result = Conexion.RecordSet_SAP(1, new string[] { TipoArticulo.ToString(), iSBO_Util.Constantes.P_VALOR_RESULT_0.ToString(),"" }, ref EstadoConsulta);
-
-
                     Respuesta.ResultadoRetorno = EstadoConsulta.ResultadoRetorno;
 
                     if (EstadoConsulta.ResultadoRetorno == iSBO_Util.Constantes.P_VALOR_RESULT_0)
