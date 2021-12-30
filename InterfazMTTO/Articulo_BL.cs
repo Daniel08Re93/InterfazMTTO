@@ -290,5 +290,47 @@ namespace InterfazMTTO.iSBO_BL
             return ListadoCosto;
         }
 
+        public static BEOITWList ObtenerAlmacenEntradaSalidaArticulo(string IdArticulo,string almacenEntrada,string almacenSalida, ref BERPTA Respuesta)
+        {
+
+            BEOITWList oitwList = new BEOITWList();
+            Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_INICIO_RESULT;
+
+            try
+            {
+                oitwList = iSBO_DA.Articulo_DA.ObtenerAlmacenEntradaSalidaArticulo(IdArticulo, almacenEntrada,almacenSalida ,ref Respuesta);
+
+                /*
+                if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
+                {
+                    throw new Exception();
+                }*/
+            }
+            catch (Exception ex)
+            {
+                iSBO_Util.ErrorHandler Error = new iSBO_Util.ErrorHandler();
+
+                if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
+                {
+                    Error.EscribirError("ControlERROR", Respuesta.CodigoErrorUsuario + '-' + Respuesta.DescripcionErrorUsuario, ex.Source, ex.StackTrace, ex.TargetSite.ToString(), "", "", "");
+                }
+                else
+                {
+                    Error.EscribirError(ex.Data.ToString(), ex.Message, ex.Source, ex.StackTrace, ex.TargetSite.ToString(), "", "", "");
+                    Respuesta.ResultadoRetorno = iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_9;
+                    Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
+                }
+            }
+            finally
+            {
+                if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_NEGATIVO_2)
+                {
+                    Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
+                }
+            }
+            return oitwList;
+        }
+
+
     }
 }

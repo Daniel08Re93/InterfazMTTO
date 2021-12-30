@@ -7,7 +7,7 @@ namespace InterfazMTTO.iSBO_BE
     {
         private string _CodigoArticulo;
         private double _CostoArticulo;
-
+        private string whsCode;
         public string CodigoArticulo
         {
             get { return _CodigoArticulo; }
@@ -19,6 +19,7 @@ namespace InterfazMTTO.iSBO_BE
             get { return _CostoArticulo; }
             set { _CostoArticulo = value; }
         }
+        public string WhsCode { get => whsCode; set => whsCode = value; }
     }
 
     public class BEOITWList : List<BEOITW>, ICloneable
