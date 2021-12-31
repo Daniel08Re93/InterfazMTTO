@@ -1,1 +1,1 @@
-﻿CALL "VS_SP_ObtenerCostoArticuloSAP" ('${param1}')
+﻿CALL "VS_SP_ObtenerCostoArticuloSAP" ('${param1}', ${param2}, ${param3})

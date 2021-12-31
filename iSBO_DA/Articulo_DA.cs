@@ -232,7 +232,7 @@ namespace InterfazMTTO.iSBO_DA
             return ListaArticulosSAP;   
         }
 
-        public static BEOITWList ObtenerCostoArticulo(string IdArticulo, ref BERPTA Respuesta)
+        public static BEOITWList ObtenerCostoArticulo(string IdArticulo, int TipoProceso, int DocEntry, ref BERPTA Respuesta)
         {
             BEOITWList ListaCosto = new BEOITWList();
             string Query = string.Empty;
@@ -245,7 +245,7 @@ namespace InterfazMTTO.iSBO_DA
                 if (Conexion.Sociedad.Connected == true)
                 {
                     BERPTA EstadoConsulta = new BERPTA();
-                    Result = Conexion.RecordSet_SAP(16, new string[] { IdArticulo.ToString()}, ref EstadoConsulta);
+                    Result = Conexion.RecordSet_SAP(16, new string[] { IdArticulo.ToString(), TipoProceso.ToString(), DocEntry.ToString()}, ref EstadoConsulta);
 
                     Respuesta.ResultadoRetorno = EstadoConsulta.ResultadoRetorno;
 

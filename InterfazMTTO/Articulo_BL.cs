@@ -243,7 +243,7 @@ namespace InterfazMTTO.iSBO_BL
         }
 
 
-        public static BEOITWList ObtenerCostoArticulo(string IdArticulo, ref BERPTA Respuesta)
+        public static BEOITWList ObtenerCostoArticulo(string IdArticulo, int TipoProceso, int DocEntry, ref BERPTA Respuesta)
         {
             BEOITWList ListadoCosto = new BEOITWList();
 
@@ -253,7 +253,7 @@ namespace InterfazMTTO.iSBO_BL
             {              
                 if (Respuesta.ResultadoRetorno == iSBO_Util.Constantes.P_VALOR_INICIO_RESULT)
                 {
-                    ListadoCosto = iSBO_DA.Articulo_DA.ObtenerCostoArticulo(IdArticulo, ref Respuesta);
+                    ListadoCosto = iSBO_DA.Articulo_DA.ObtenerCostoArticulo(IdArticulo, TipoProceso, DocEntry, ref Respuesta);
                     
                     if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
                     {

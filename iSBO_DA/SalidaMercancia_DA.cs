@@ -6,7 +6,7 @@ namespace InterfazMTTO.iSBO_DA
     public class SalidaMercancia_DA
     {
 
-        public static BEIGE1List RegistraSalidaMercancia(BEOIGE OIGE, BEIGE1List IGE1, ref BERPTA Respuesta, Boolean guardarPreliminar = false)
+        public static BEIGE1List RegistraSalidaMercancia(BEOIGE OIGE, BEIGE1List IGE1, ref BERPTA Respuesta, ref string DocEntry, Boolean guardarPreliminar = false)
         {
             BEIGE1List ListSalidaMercancia = new BEIGE1List();
             SAPbobsCOM.IDocuments DocSalidaM = null;
@@ -75,6 +75,10 @@ namespace InterfazMTTO.iSBO_DA
                             Respuesta = iSBO_Util.DiccionarioErrores.ObtenerError(Respuesta.ResultadoRetorno);
                             Respuesta.DescripcionErrorUsuario = Respuesta.DescripcionErrorUsuario + " " + CodError + " " + DesError;                            
                         }
+
+                        #region COSTO_ARTICULO_SALIDA
+                        DocEntry = Conexion.Sociedad.GetNewObjectKey();
+                        #endregion
                     }
                 }
                 else

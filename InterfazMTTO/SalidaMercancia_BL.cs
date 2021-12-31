@@ -6,7 +6,7 @@ namespace InterfazMTTO.iSBO_BL
     public class SalidaMercancia_BL
     {
 
-        public static BEIGE1List RegistraSalidaMercancia(BEOIGE OIGE, BEIGE1List IGE1, ref BERPTA Respuesta, Boolean guardarPreliminar = false)
+        public static BEIGE1List RegistraSalidaMercancia(BEOIGE OIGE, BEIGE1List IGE1, ref BERPTA Respuesta, ref string DocEntry, Boolean guardarPreliminar = false)
         {
             BEIGE1List ListSalidaMercancia = new BEIGE1List();
 
@@ -63,7 +63,7 @@ namespace InterfazMTTO.iSBO_BL
                 if (Respuesta.ResultadoRetorno == iSBO_Util.Constantes.P_VALOR_INICIO_RESULT)
                 {
                     //Validaciones de capa de negocio OK. Invoca la clase DA
-                    ListSalidaMercancia = iSBO_DA.SalidaMercancia_DA.RegistraSalidaMercancia(OIGE, IGE1, ref Respuesta, guardarPreliminar);
+                    ListSalidaMercancia = iSBO_DA.SalidaMercancia_DA.RegistraSalidaMercancia(OIGE, IGE1, ref Respuesta, ref DocEntry, guardarPreliminar);
 
                     if (Respuesta.ResultadoRetorno != iSBO_Util.Constantes.P_VALOR_RESULT_0)
                     {
